@@ -1,5 +1,5 @@
 import { Scrollspy as ScrollSpy } from '@makotot/ghostui/src/Scrollspy';
-import { useLocation, useRouteMeta, useSiteData } from 'dumi';
+import { getTocUrl, useLocation, useRouteMeta, useSiteData } from 'dumi';
 import React, {
   useEffect,
   useRef,
@@ -42,7 +42,7 @@ const Toc: FC = () => {
             {toc
               .filter(({ depth }) => depth > 1 && depth < 4)
               .map((item, i) => {
-                const link = `#${encodeURIComponent(item.id)}`;
+                const link = getTocUrl(item.id);
                 const activeIndex =
                   currentElementIndexInViewport > -1
                     ? currentElementIndexInViewport
