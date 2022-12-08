@@ -65,7 +65,6 @@ export default function rehypeSlug(): Transformer<Root> {
           }
         });
       }
-      console.log('vFile.data.toc==', vFile.data.toc);
     });
   };
 }

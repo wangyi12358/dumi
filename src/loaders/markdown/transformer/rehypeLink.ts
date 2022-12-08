@@ -26,7 +26,6 @@ export default function rehypeLink(
       if (node.tagName === 'a' && typeof node.properties?.href === 'string') {
         const href = node.properties.href;
         const parsedUrl = url.parse(href);
-
         // handle internal link
         if (parsedUrl.hostname) return SKIP;
 
@@ -46,7 +45,7 @@ export default function rehypeLink(
 
         parent!.children.splice(i!, 1, {
           type: 'element',
-          tagName: 'Link',
+          tagName: 'AnchorLink',
           children: node.children,
           properties: {
             ...lodash.omit(node.properties, ['href']),
