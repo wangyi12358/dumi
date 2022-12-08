@@ -7,4 +7,7 @@ export default {
   mfsu: false,
   apiParser: {},
   resolve: { entryFile: './src/index.ts' },
+  history: {
+    type: 'hash',
+  },
 };

@@ -46,7 +46,7 @@ export default function rehypeLink(
 
         parent!.children.splice(i!, 1, {
           type: 'element',
-          tagName: 'Link',
+          tagName: 'AnchorLink',
           children: node.children,
           properties: {
             ...lodash.omit(node.properties, ['href']),
