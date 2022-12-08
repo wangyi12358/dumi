@@ -143,11 +143,11 @@ export default async (raw: string, opts: IMdTransformerOptions) => {
       resolver,
     })
     .use(rehypeSlug)
+    .use(rehypeAutolinkHeadings)
     .use(rehypeLink, {
       fileAbsPath: opts.fileAbsPath,
       routers: opts.routers,
     })
-    .use(rehypeAutolinkHeadings)
     .use(rehypeIsolation)
     .use(rehypeEnhancedTag)
     .use(rehypeDesc)
